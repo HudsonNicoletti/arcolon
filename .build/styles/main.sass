@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic)
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic)
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,700)
+@import url(https://fonts.googleapis.com/css?family=Lato)
+
+@import 'bootstrap'
+@import 'variables'
+@import 'owl.carousel'
+@import 'owl.theme'
+@import 'owl.transitions'
+
+@viewport
+  zoom: 1.0
+  width: device-width
+
+@font-face
+  font-family: 'Impact'
+  src: url('../fonts/impact.ttf')
+
+body,html
+  font-family: Raleway
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+
+  header
+    width: 100%
+    padding: 15px 0
+    background:
+      color: $white
+
+    .container
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      @media( max-width: 960px )
+        flex-direction: column
+
+      .logo
+        height: 132px
+        width: 300px
+        background:
+          image: url("../images/logo.png")
+          repeat: no-repeat
+          size: contain
+          position: center
+
+      nav
+        margin: 0
+        padding: 25px 0
+        width: 100%
+
+        @media( max-width: 640px )
+          padding: 0
+
+        .toggle
+          display: none
+          align-items: center
+          justify-content: center
+          flex-direction: column
+          position: fixed
+          width: 50px
+          height: 50px
+          background-color: $teal
+          border-radius: 50%
+          top: 15px
+          right: 5px
+          z-index: 101
+          border-radius: 2px solid $white
+          cursor: pointer
+
+          @media( max-width: 640px )
+            display: flex
+
+          span
+            width: 40px
+            height: 6px
+            display: inline-block
+            border-radius: 6px
+            background-color: $white
+            margin: 3px 0
+            opacity: 1
+            transition: all 0.3s linear
+            &:nth-child(1), &:nth-child(3)
+              width: 30px
+
+          &.active
+            span
+              margin: -3px 0
+              &:nth-child(1)
+                transform: rotate(-45deg)
+                width: 40px
+              &:nth-child(2)
+                transform: rotate(45deg)
+              &:nth-child(3)
+                opacity: 0
+
+        ul
+          list-style: none
+          padding: 0
+          margin: 0
+          display: flex
+          align-items: center
+          justify-content: center
+          transition: all 0.3s ease-in-out
+
+          @media( max-width: 640px )
+            display: none
+
+            &.active
+              display: flex
+              position: fixed
+              width: 100vw
+              height: 100vh
+              flex-direction: column
+              background-color: $grey
+              top: 0
+              left: 0
+
+          li
+            padding: 4px 10px
+            border-radius: 16px
+            transition: all 0.3s ease-in-out
+
+            &.active, &:hover
+              background:
+                color: $teal
+
+              a
+                color: $white
+
+            a
+              color: $blue
+              font:
+                family: 'Lato'
+                size: 20px
+              text-decoration: none
+
+            @media( max-width: 640px )
+              padding: 0 0
+              width: 100%
+              text-align: center
+              border-radius: 0
+              a
+                width: 100%
+                padding: 15px 0
+                display: inline-block
+
+
+
+@import 'section.slider'
