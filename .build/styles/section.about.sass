@@ -1,0 +1,47 @@
+section.about
+  padding: 15px
+
+  .container
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+
+    @media( max-width: 960px )
+      flex-direction: column-reverse
+
+    .text
+      padding: 15px
+      width: 100%
+
+      h2
+        font:
+          family: 'Impact'
+          size: 58px
+        color: $coal
+        margin-bottom: 15px
+      p
+        color: $coal
+        font:
+          family: 'Lato'
+          size: 18px
+        text-align: justify
+
+      a
+        margin-top: 15px
+        display: inline-block
+        background-color: $red
+        color: $white
+        padding: 10px 10px 10px 60px
+        font:
+          family: 'Lato'
+          size: 24px
+        transition: all 0.3s linear
+        border: 4px solid $white
+
+        &:hover
+          background-color: $white
+          border: 4px solid $red
+          color: $red
+
+    figure
+      width: 100%
