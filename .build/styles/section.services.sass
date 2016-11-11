@@ -1,0 +1,71 @@
+section.services
+  padding: 15px
+  background-color: $grey
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+
+    @media( max-width: 960px )
+
+    h2.title
+      font:
+        family: 'Impact'
+        size: 58px
+      color: $coal
+      margin-bottom: 15px
+
+    .services
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: row
+
+      @media( max-width: 960px )
+        flex-direction: column
+
+      .service
+        width: 100%
+        margin: 0 15px
+        background-color: $white
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        min-height: 250px
+        margin-top: 100px
+
+        .title
+          background-color: $teal
+          width: 80%
+          text-align: center
+
+          h2
+            font:
+              family: 'Impact'
+              size: 36px
+            color: $white
+            padding: 15px
+            display: inline-block
+            margin-top: -60px
+            background-color: $teal
+            width: 100%
+
+
+        p
+          display: inline-block
+          width: 100%
+          text-align: justify
+          padding: 15px
+
+        a
+          display: inline-block
+          width: 100%
+          padding: 15px
+          text-align: right
+          font:
+            family: 'Impact'
+            size: 18px
+          color: $red
