@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="fixed">
     <div class="container">
       <div class="logo">
 
@@ -23,19 +23,19 @@
           <span class="bar"></span>
         </div>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Locação | Venda</a></li>
-          <li><a href="#">Galeria</a></li>
-          <li><a href="#">Dicas</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a data-scroll-nav="1" href="#">Home</a></li>
+          <li><a data-scroll-nav="2" href="#">Sobre</a></li>
+          <li><a data-scroll-nav="3" href="#">Serviços</a></li>
+          <li><a data-scroll-nav="4" href="#">Locação | Venda</a></li>
+          <li><a data-scroll-nav="5" href="#">Galeria</a></li>
+          <li><a data-scroll-nav="6" href="#">Dicas</a></li>
+          <li><a data-scroll-nav="7" href="#">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="slider">
+  <section data-scroll-index="1" class="slider">
     <ul class="slides-container">
       <li style="background-image: url('assets/images/slider/01.jpg')">
         <div class="container">
@@ -58,7 +58,7 @@
     </ul>
   </section>
 
-  <section class="about">
+  <section data-scroll-index="2" class="about">
     <div class="container">
       <div class="text">
         <h2>Quem Somos?</h2>
@@ -71,7 +71,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section data-scroll-index="3" class="services">
     <div class="container">
       <h2 class="title">Serviços</h2>
       <div class="services">
@@ -101,7 +101,7 @@
         </div>
       </div>
 
-      <div class="hyperlinks">
+      <div data-scroll-index="4" class="hyperlinks">
         <a class="link" href="multimarcas.html">
           <img src="assets/images/content/hyper-1-arrows.png" alt="">
           <h2>locação</h2>
@@ -115,7 +115,7 @@
     </div>
   </section>
 
-  <section class="gallery">
+  <section data-scroll-index="5" class="gallery">
     <div class="container">
       <h2 class="title">Galeria</h2>
       <div class="gallery-images">
@@ -159,7 +159,7 @@
     </div>
   </section>
 
-  <section class="tips">
+  <section data-scroll-index="6" class="tips">
     <div class="container">
       <h2 class="title">dicas</h2>
       <div class="tips-container">
@@ -217,7 +217,7 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section data-scroll-index="7" class="contact">
     <div class="container">
       <h2 class="title">contato</h2>
       <div class="content">
@@ -254,6 +254,7 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCuzQHd-qcwqDiyOCJ9OX8ejGdUf3hxuc"></script>
   <script src="assets/scripts/jquery.min.js"></script>
+  <script src="assets/scripts/scrollIt.js"></script>
   <script src="assets/scripts/owl.carousel.min.js"></script>
   <script src="assets/scripts/functions.min.js"></script>
 </body>

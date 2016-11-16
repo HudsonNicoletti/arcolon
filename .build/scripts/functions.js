@@ -5,6 +5,7 @@
       $nav          = $header.find("nav"),
       $menu_toggle  = $nav.find(".toggle"),
       $menu         = $nav.find("ul"),
+      $menuitem     = $menu.find("li a"),
       $section      = $("section"),
       $slider       = $section.filter(".slider")
       $slides       = $slider.find(".slides-container"),
@@ -18,6 +19,14 @@
         $menu.toggleClass("active");
       });
 
+      $menuitem.on("click",function(){
+        if($menu.hasClass("active"))
+        {
+          $menu_toggle.removeClass("active");
+          $menu.removeClass("active");
+        }
+      });
+
       $window.scroll(function(){
           var offset = $(window).scrollTop();
 
@@ -26,6 +35,9 @@
 
       function sliderInit()
       {
+        $slider.css({
+          "margin-top" : $header.height() + 20  
+        })
         var owl = $slides.owlCarousel({
           autoPlay : true,
           navigation : false,
@@ -56,17 +68,17 @@
         return owl;
       }
 
-      function fixed_header(offset)
-      {
-        if( offset >= $header.height() )
+        function fixed_header(offset)
         {
-          $header.addClass("fixed");
+          if( offset >= $header.height() )
+          {
+            $header.addClass("fixed");
+          }
+          if( offset < $header.height() )
+          {
+            $header.removeClass("fixed");
+          }
         }
-        if( offset < $header.height() )
-        {
-          $header.removeClass("fixed");
-        }
-      }
 
       function googlemaps()
       {
@@ -123,5 +135,10 @@
       {
         google.maps.event.addDomListener(window, 'load', googlemaps() );
       }
+
+      $.scrollIt({
+        topOffset: -120,
+        activeClass: 'active'
+      });
 
 })(jQuery);
