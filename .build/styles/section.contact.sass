@@ -1,0 +1,158 @@
+section.contact
+  padding: 35px 15px
+  background-color: $grey
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+
+    @media( max-width: 960px )
+
+    h2.title
+      font:
+        family: 'Impact'
+        size: 58px
+      color: $coal
+      margin-bottom: 15px
+      text-transform: uppercase
+      text-align: center
+
+    .content
+      padding: 15px
+      margin: 0
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+
+      @media( max-width: 960px )
+        flex-direction: column-reverse
+
+      .column
+        width: 100%
+
+        ul
+          list-style: none
+          margin: 0
+          padding: 0
+
+          li + li
+            margin-top: 40px
+
+          li
+            color: $coal
+            font:
+              family: 'Lato'
+              size: 22px
+            i.fa
+              padding-right: 16px
+              font-size: 34px
+              color: $red
+              display: inline-block
+              width: 34px
+              text-align: center
+
+        form
+          display: flex
+          align-items: flex-end
+          justify-content: center
+          flex-direction: column
+
+          input[type='text'], input[type='email'], input[type='password']
+            border: 1px solid $coal
+            font:
+              family: 'Lato'
+              size: 18px
+            color: $coal
+            text-align: left
+            width: 450px
+            outline: none
+            padding: 6px 5px
+
+            &:focus
+              outline: none
+
+          textarea
+            border: 1px solid $coal
+            font:
+              family: 'Lato'
+              size: 18px
+            color: $coal
+            text-align: left
+            width: 450px
+            height: 200px
+            outline: none
+            padding: 6px 5px
+            resize: none
+
+            &:focus
+              outline: none
+
+          input + input
+            margin-top: 15px
+
+          input + textarea
+            margin-top: 15px
+
+          button
+            border: none
+            margin-top: 15px
+            display: inline-block
+            background-color: $red
+            color: $white
+            padding: 10px 10px 10px 60px
+            font:
+              family: 'Lato'
+              size: 24px
+            position: relative
+            text-decoration: none
+            text-transform: uppercase
+
+            &:before
+              content: ''
+              position: absolute
+              top: 0
+              left: 0
+              background-color: rgba($coal,0.9)
+              padding: 28px 0px 26px 0px
+              transition: all 0.1s linear
+
+            &:hover
+              &:before
+                padding: 28px 50px 26px 0px
+
+  #googleMap
+    height: 500px
+    width: 100%
+
+    @media( max-width: 640px )
+      height: 300px
+
+    .map-marker
+      .marker-title
+        font:
+          family: 'Impact'
+          size: 28px
+        color: $coal
+        margin-bottom: 15px
+        text-transform: uppercase
+        text-align: center
+
+      .marker-item-title
+        font:
+          family: 'Lato'
+          size: 20px
+        color: $coal
+        margin-bottom: 15px
+        text-transform: uppercase
+        text-align: center
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+
+        span
+          font:
+            size: 18px
