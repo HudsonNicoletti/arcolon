@@ -84,7 +84,7 @@ section.services
       .link
         display: flex
         align-items: center
-        justify-content: space-around
+        justify-content: center
         height: 220px
         width: 100%
         background:
@@ -94,11 +94,16 @@ section.services
         position: relative
         text-decoration: none
 
+        @media( max-width: 960px )
+          flex-direction: column
+
         &:nth-child(1)
           background:
             image: url('../images/content/hyper-1.jpg')
           margin-right: 15px
           @media( max-width: 960px )
+            img
+              display: none
             margin:
               right: 0
               bottom: 15px
