@@ -48,7 +48,7 @@
           pagination : true,
           paginationSpeed : 400,
           stopOnHover: true,
-          items: 1,
+          singleItem: true,
           theme: "tips-theme"
         });
         return owl;
