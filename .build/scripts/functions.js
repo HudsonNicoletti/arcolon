@@ -7,7 +7,9 @@
       $menu         = $nav.find("ul"),
       $section      = $("section"),
       $slider       = $section.filter(".slider")
-      $slides       = $slider.find(".slides-container");
+      $slides       = $slider.find(".slides-container"),
+      $tips         = $section.filter(".tips"),
+      $tipcarousel  = $tips.find(".tips-container");
 
       $menu_toggle.on("click",function(){
         $menu_toggle.toggleClass("active");
@@ -36,6 +38,22 @@
         return owl;
       }
 
+      function tipsInit()
+      {
+        var owl = $tipcarousel.owlCarousel({
+          loop    : true,
+          autoPlay : true,
+          navigation : false,
+          slideSpeed : 300,
+          pagination : true,
+          paginationSpeed : 400,
+          stopOnHover: true,
+          items: 1,
+          theme: "tips-theme"
+        });
+        return owl;
+      }
+
       function fixed_header(offset)
       {
         if( offset >= $header.height() )
@@ -48,6 +66,14 @@
         }
       }
 
-      sliderInit();
+      if($slides.length)
+      {
+        sliderInit();
+      }
+
+      if($tips.length)
+      {
+        tipsInit();
+      }
 
 })(jQuery);

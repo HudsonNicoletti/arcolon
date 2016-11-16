@@ -1,0 +1,69 @@
+section.newsletter
+  padding: 35px 15px
+  background-color: $blue
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+
+    @media( max-width: 960px )
+
+    h2.title
+      font:
+        family: 'Impact'
+        size: 58px
+      color: $white
+      margin-bottom: 15px
+      text-transform: uppercase
+
+    span.subtitle
+      font:
+        family: 'Lato'
+        size: 18px
+      color: $white
+
+
+    form
+      padding: 15px
+      margin: 0
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      input[type='text'], input[type='email'], input[type='password']
+        border: 0
+        font:
+          family: 'Lato'
+          size: 18px
+        color: $coal
+        text-align: center
+        width: 350px
+        outline: none
+        padding: 6px 5px
+
+        &:focus
+          outline: none
+
+      button
+        border: 2px solid white
+        background-color: $blue
+        font:
+          family: 'Lato'
+          size: 18px
+        color: $white
+        text-align: center
+        width: 350px
+        outline: none
+        padding: 6px 5px
+        margin: 10px 0
+        text-transform: uppercase
+        transition: all 0.2s linear
+
+        &:hover
+          border: 2px solid $blue
+          background-color: $white
+          color: $blue
