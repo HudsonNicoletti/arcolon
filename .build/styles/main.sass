@@ -29,6 +29,13 @@ body,html
     background:
       color: $white
 
+    &.fixed
+      position: fixed
+      z-index: 110
+      .container
+        .logo
+          height: 85px
+
     .container
       position: relative
       display: flex
@@ -46,6 +53,7 @@ body,html
           repeat: no-repeat
           size: contain
           position: center
+        transition: all 0.3s linear
 
       nav
         margin: 0
@@ -154,3 +162,4 @@ body,html
 @import 'section.slider'
 @import 'section.about'
 @import 'section.services'
+@import 'section.gallery'

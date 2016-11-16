@@ -1,6 +1,7 @@
 (function($){
 
-  var $header       = $("header"),
+  var $window       = $(window),
+      $header       = $("header"),
       $nav          = $header.find("nav"),
       $menu_toggle  = $nav.find(".toggle"),
       $menu         = $nav.find("ul"),
@@ -11,6 +12,12 @@
       $menu_toggle.on("click",function(){
         $menu_toggle.toggleClass("active");
         $menu.toggleClass("active");
+      });
+
+      $window.scroll(function(){
+          var offset = $(window).scrollTop();
+
+          fixed_header( offset );
       });
 
       function sliderInit()
@@ -27,6 +34,18 @@
           theme: "slider-theme"
         });
         return owl;
+      }
+
+      function fixed_header(offset)
+      {
+        if( offset >= $header.height() )
+        {
+          $header.addClass("fixed");
+        }
+        if( offset < $header.height() )
+        {
+          $header.removeClass("fixed");
+        }
       }
 
       sliderInit();
