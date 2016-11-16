@@ -94,27 +94,14 @@ section.services
         position: relative
         text-decoration: none
 
-        @media( max-width: 960px )
-          flex-direction: column
-
         &:nth-child(1)
           background:
             image: url('../images/content/hyper-1.jpg')
           margin-right: 15px
-          @media( max-width: 960px )
-            img
-              display: none
-            margin:
-              right: 0
-              bottom: 15px
         &:nth-child(2)
           background:
             image: url('../images/content/hyper-2.jpg')
           margin-left: 15px
-          @media( max-width: 960px )
-            margin:
-              right: 0
-              bottom: 15px
 
         &:before
           content: ''
@@ -126,6 +113,20 @@ section.services
           background-color: rgba($red,0.6)
           z-index: 1
 
+        @media( max-width: 960px )
+          flex-direction: column
+          &:nth-child(1)
+            img
+              display: none
+            margin:
+              right: 0px
+              bottom: 15px
+
+          &:nth-child(2)
+            margin:
+              left: 0px
+              bottom: 15px
+
         *
           z-index: 2
 
@@ -136,6 +137,7 @@ section.services
           color: $white
           text-transform: uppercase
           display: inline-block
+          margin: 0 15px
 
         span
           font:
