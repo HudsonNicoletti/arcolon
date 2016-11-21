@@ -11,6 +11,8 @@
       $slides       = $slider.find(".slides-container"),
       $tips         = $section.filter(".tips"),
       $tipcarousel  = $tips.find(".tips-container")
+      $gallery      = $section.filter(".gallery"),
+      $galleryImgs  = $gallery.find(".gallery-container"),
       $contact      = $section.filter(".contact"),
       $map          = $contact.find("#googleMap");
 
@@ -36,7 +38,7 @@
       function sliderInit()
       {
         $slider.css({
-          "margin-top" : $header.height() + 20  
+          "margin-top" : $header.height() + 20
         })
         var owl = $slides.owlCarousel({
           autoPlay : true,
@@ -64,6 +66,22 @@
           stopOnHover: true,
           singleItem: true,
           theme: "tips-theme"
+        });
+        return owl;
+      }
+
+      function galleryInit()
+      {
+        var owl = $galleryImgs.owlCarousel({
+          loop    : true,
+          autoPlay : true,
+          navigation : false,
+          slideSpeed : 300,
+          pagination : true,
+          paginationSpeed : 400,
+          stopOnHover: true,
+          singleItem: true,
+          theme: "gallery-theme"
         });
         return owl;
       }
@@ -129,6 +147,11 @@
       if($tips.length)
       {
         tipsInit();
+      }
+
+      if($gallery.length)
+      {
+        galleryInit();
       }
 
       if($map.length)
