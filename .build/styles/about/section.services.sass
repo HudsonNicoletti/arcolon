@@ -1,0 +1,111 @@
+section.services
+  padding: 15px
+  background-color: $white
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+
+    @media( max-width: 960px )
+
+    h2.title
+      font:
+        family: 'Impact'
+        size: 58px
+      color: $coal
+      margin-bottom: 15px
+      text-transform: uppercase
+
+    .services
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      @media( max-width: 960px )
+        flex-direction: column
+
+      hr.separator
+        height: 20px
+        width: 80%
+        border: 0
+        position: relative
+        margin: 100px 0 -100px 0
+        border-bottom: 2px solid $red
+
+        &:before
+          content: ''
+          width: 20px
+          height: 20px
+          background-color: $red
+          border-radius: 50%
+          top: 10px
+          right: 0
+          display: inline-block
+          position: absolute
+          z-index: 2
+
+      .service
+        width: 100%
+        margin: 0 15px
+        background-color: $white
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: row
+        min-height: 250px
+        margin-top: 100px
+        position: relative
+
+        .title
+          background-color: $teal
+          width: 215px
+          text-align: center
+          position: absolute
+          left: -107px
+
+          h2
+            font:
+              family: 'Impact'
+              size: 36px
+            color: $white
+            padding: 15px
+            display: inline-block
+            margin-top: -60px
+            background-color: $teal
+            width: 100%
+
+        .wrapper
+          width: 100%
+          display: flex
+          align-items: flex-start
+          justify-content: center
+
+        .description
+          margin-left: 100px
+          width: 50%
+          background-color: $grey
+          padding: 20px
+
+          p
+            display: inline-block
+            width: 100%
+            text-align: justify
+            padding: 15px
+
+        .gallery
+          width: 50%
+          display: flex
+          align-items: center
+          justify-content: center
+          flex-wrap: wrap
+
+          figure
+            width: calc(50% - 10px)
+            margin: 5px
+
+            img
+              width: 100%
+              height: 100%
