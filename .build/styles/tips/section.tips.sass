@@ -1,0 +1,162 @@
+section.tips
+  margin-top: 130px
+  padding: 15px
+  background-color: $grey
+
+  .border-strip
+    height: 30px
+    width: 100vw
+    position: relative
+    margin: -15px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: row
+
+    .blue
+      position: relative
+      width: 70%
+      height: 30px
+      background-color: $blue
+    .red
+      position: relative
+      width: 30%
+      height: 30px
+      background-color: $red
+
+      &:before
+        content: ''
+        position: absolute
+        left: -30px
+        top: 0
+        width: 0px
+        height: 0px
+        border:
+          top:    15px solid transparent
+          right:  15px solid $red
+          bottom: 15px solid $red
+          left:   15px solid transparent
+
+  .container
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+
+    @media( max-width: 960px )
+      flex-direction: column
+      margin-top: 80px
+
+    .text
+      padding: 15px
+      width: 100%
+
+      h2
+        font:
+          family: 'Impact'
+          size: 58px
+        color: $coal
+        margin-bottom: 15px
+
+    .articles
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column !important
+      position: relative
+      width: 100%
+
+      @media( max-width: 960px )
+        article + article
+          border-top: 2px solid $teal !important
+        article
+          flex-direction: column !important
+          align-items: center !important
+          p
+            border-bottom: none !important
+          a
+            width: 100% !important
+            display: inline-block !important
+
+      article
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        flex-direction: row
+        position: relative
+        padding: 15px 0
+
+        figure
+          width: 250px
+          height: 250px
+          border-radius: 50%
+          border: 6px solid $teal
+          overflow: hidden
+          img
+            width: 100%
+            height: 100%
+
+        p
+          flex: 1
+          color: $coal
+          font:
+            family: 'Lato'
+            size: 18px
+          text-align: justify
+          padding: 25px
+          border-bottom: 2px solid $teal
+          display: flex
+          align-items: center
+          justify-content: center
+          height: 240px
+
+        a
+          margin-bottom: 10px
+          display: inline-block
+          background-color: $teal
+          color: $white
+          padding: 10px 10px 10px 60px
+          font:
+            family: 'Lato'
+            size: 24px
+          position: relative
+          text-decoration: none
+          text-transform: uppercase
+
+          &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            background-color: rgba($white,0.4)
+            padding: 28px 0px 26px 0px
+            transition: all 0.1s linear
+
+          &:hover
+            &:before
+              padding: 28px 50px 26px 0px
+
+    .pagination
+      width: 100%
+      height: 60px
+      padding: 15px
+      display: flex
+      align-items: center
+      justify-content: center
+
+    .page-next, .page-prev
+      width: 52px
+      height: 52px
+      background:
+        image: url('../images/content/carousel-nav.png')
+        repeat: no-repeat
+      margin: 20px 4px
+      cursor: pointer
+      transition: all 0.2s linear
+      &:hover
+        opacity: 0.7
+    .page-prev
+      background:
+        position: 0 0
+    .page-next
+      background:
+        position: -52px 0

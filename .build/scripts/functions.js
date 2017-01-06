@@ -1,6 +1,7 @@
 (function($){
 
   var $window       = $(window),
+      $body         = $("body"),
       $header       = $("header"),
       $nav          = $header.find("nav"),
       $menu_toggle  = $nav.find(".toggle"),
@@ -65,6 +66,34 @@
           paginationSpeed : 400,
           stopOnHover: true,
           singleItem: true,
+          theme: "tips-theme"
+        });
+        return owl;
+      }
+
+      function tipsPageInit()
+      {
+        var $tps      = $tips.find(".articles");
+        var $articles = $tps.find("article");
+        // group by 2 automaticly for carousel
+        for(var i = 0; i < $articles.length; i+=2) {
+          $articles.slice(i, i+2).wrapAll("<div class='group'></div>");
+        }
+
+        var owl = $tps.owlCarousel({
+          loop    : true,
+          autoPlay : true,
+          slideSpeed : 300,
+          pagination : false,
+          paginationSpeed : 400,
+          stopOnHover: true,
+          singleItem: true,
+          navigation:true,
+          navContainer: "#pagination",
+          navigationText: [
+            "<div class=\"page-prev owl-prev\"></div>",
+            "<div class=\"page-next owl-prev\"></div>"
+          ],
           theme: "tips-theme"
         });
         return owl;
@@ -157,6 +186,11 @@
       if($map.length)
       {
         google.maps.event.addDomListener(window, 'load', googlemaps() );
+      }
+
+      if($body.hasClass("tips"))
+      {
+        tipsPageInit()
       }
 
       $.scrollIt({
