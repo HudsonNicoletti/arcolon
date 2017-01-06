@@ -57,6 +57,12 @@
 
       function tipsInit()
       {
+        var $tips = $tipcarousel.find(".tip");
+          // group by 2 automaticly for carousel
+          for(var i = 0; i < $tips.length; i+=2) {
+            $tips.slice(i, i+2).wrapAll("<div class='group'></div>");
+          }
+
         var owl = $tipcarousel.owlCarousel({
           loop    : true,
           autoPlay : true,
