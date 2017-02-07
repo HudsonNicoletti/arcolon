@@ -7,7 +7,7 @@ use Phalcon\Mvc\Controller,
 
 use Api\Misc\ApiExceptions as ApiException;
 
-class ApiFunctions extends ControllerBase
+class ApiFunctions extends Controller
 {
   /*
    * @throws
@@ -22,14 +22,14 @@ class ApiFunctions extends ControllerBase
       throw new \Exception("Template not found", 1);
     }
 
-    $this->mail->functions->From       = $data->from->email;
-    $this->mail->functions->FromName   = $data->from->name;
+    $this->mail->functions->From       = $data->from['email'];
+    $this->mail->functions->FromName   = $data->from['name'];
 
     $this->mail->functions->addAddress($this->configuration->mail->email);
     $this->mail->functions->Subject   = "Website Contact";
 
     $this->mail->functions->Body = (new Mustache)->render($template, [
-      'NAME'    => $data->from->name,
+      'NAME'    => $data->from['name'],
       'TEXT'    => $data->message,
     ]);
 

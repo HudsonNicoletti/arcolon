@@ -3,19 +3,20 @@
 namespace Api\Controllers;
 
 use Mustache_Engine as Mustache;
-use Api\Misc\ApiExceptions as ApiExceptions;
+use Api\Misc\ApiExceptions as ApiExceptions,
+    Api\Misc\ApiFunctions;
 
 use Phalcon\Mvc\Controller;
 
 class ContactController extends ControllerBase
 {
-  public function IndexAction()
+  public function SendAction()
   {
     $this->response->setContentType("application/json");
 
     try
     {
-      if(!$this->request->isPost() || !$this->request->isAjax()):
+      if(!$this->request->isPost()):
         return ApiExceptions::InvalidRequestMethod();
 
       elseif(!$this->request->getPost("name","string")):
@@ -29,9 +30,9 @@ class ContactController extends ControllerBase
 
       elseif(!$this->isEmail($this->request->getPost("email","email"))):
         return ApiExceptions::InvalidEmailAddress();
-
-      elseif(!$this->security->checkToken()):
-        return ApiExceptions::InvalidCsrfToken();
+      //
+      // elseif(!$this->security->checkToken()):
+      //   return ApiExceptions::InvalidCsrfToken();
       endif;
 
       $Api = new ApiFunctions;
