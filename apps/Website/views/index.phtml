@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mais Um">
+  <meta name="author" content="Hudson Nicoletti">
+  <title>Arcolon</title>
+
+  <?php echo $this->assets->outputCss(); ?>
+  <link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+
+<header class="fixed">
+  <div class="container">
+    <div class="logo">
+
+    </div>
+    <nav>
+      <div class="toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul>
+        <li><a data-scroll-nav="1" href="#">Home</a></li>
+        <li><a data-scroll-nav="2" href="#">Sobre</a></li>
+        <li><a data-scroll-nav="3" href="#">Serviços</a></li>
+        <li><a href="/locacao">Locação</a></li>
+        <li><a data-scroll-nav="5" href="#">Galeria</a></li>
+        <li><a data-scroll-nav="6" href="#">Dicas</a></li>
+        <li><a data-scroll-nav="7" href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <?php echo $this->getContent(); ?>
+
+<section data-scroll-index="7" class="contact">
+  <div class="container">
+    <h2 class="title">contato</h2>
+    <div class="content">
+      <div class="column">
+        <ul>
+          <li><i class="fa fa-phone"></i> (43) 3336.5493 </li>
+          <li><i class="fa fa-envelope"></i> contato@arcolon.com.br </li>
+          <li><i class="fa fa-map-marker"></i> Av. Lorem ipsum dolor , 158. CEP: 860000-600 , Londrina - PR </li>
+        </ul>
+      </div>
+      <div class="column">
+        <form action="/contact/send">
+          <input type="text" name="name" placeholder="Nome Completo">
+          <input type="email" name="email" placeholder="E-Mail">
+          <textarea name="message" placeholder="Mensagem"></textarea>
+          <button type="submit"> Enviar!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="googleMap"></div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; Todos os direitos reservados - 2017</p>
+    <ul>
+      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="www.agenciadzoe.com.br" target="_blank"><img src="http://www.agenciadzoe.com.br/assets/public/images/logo.png" alt="Desenvolvimento: Agência dZoë"></a></li>
+    </ul>
+  </div>
+</footer>
+
+  <?php echo $this->assets->outputJs(); ?>
+</body>
+</html>

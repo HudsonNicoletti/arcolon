@@ -158,7 +158,7 @@
                 map: map,
                 title: 'Arcolon - Ar Condicionado',
                 icon : {
-                  url: 'assets/images/content/marker.png',
+                  url: 'assets/public/images/content/marker.png',
                   origin: new google.maps.Point(0,0),
                   anchor: new google.maps.Point(40,68)    // 27 for Px from the X axis (tip of pointer) and 42 For Px from the Y axis (Height)
                 }

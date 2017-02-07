@@ -7,7 +7,7 @@ module.exports = function(grunt){
           style: 'compressed'   // nested, compact, compressed, expanded.
         },
         files: {
-          '../assets/styles/main.css': 'styles/main.sass',
+          '../public/assets/public/styles/main.css': 'styles/main.sass',
         }
       }
     },
@@ -22,14 +22,14 @@ module.exports = function(grunt){
         ]
       },
       dist: {
-        src: '../assets/styles/*.css'
+        src: '../public/assets/public/styles/*.css'
       }
     },
 
     rucksack: {
       compile: {
         files: {
-          '../assets/styles/main.css': '../assets/styles/main.css'
+          '../public/assets/public/styles/main.css': '../public/assets/public/styles/main.css'
         }
       }
     },
@@ -37,7 +37,7 @@ module.exports = function(grunt){
     uglify: {
       my_target: {
         files: {
-          '../assets/scripts/functions.min.js': ['scripts/functions.js']
+          '../public/assets/public/scripts/functions.min.js': ['scripts/functions.js']
         }
       }
     },
