@@ -34,24 +34,12 @@ class ContactController extends ControllerBase
         return ApiExceptions::InvalidCsrfToken();
       endif;
 
-      $this->mail->functions->From       = $this->request->getPost("email","email");
-      $this->mail->functions->FromName   = $this->request->getPost("name","string");
+      $Api = new ApiFunctions;
 
-      $this->mail->functions->addAddress($this->configuration->mail->email);
-      $this->mail->functions->Subject   = "Website Contact";
-
-      $this->mail->functions->Body = (new Mustache)->render(file_get_contents(__DIR__."/../../../templates/mail.tpl"), [
-        'NAME'    => $this->request->getPost("name","string"),
-        'TEXT'    => $this->request->getPost("message","string"),
+      $Api->sendEmail([
+        "from"    => [ "name" => $this->request->getPost("name","string"), "email" => $this->request->getPost("email","email")],
+        "message" => $this->request->getPost("message","string")
       ]);
-
-      $response = ($this->mail->functions->send() ? true : false);
-      $this->mail->functions->ClearAddresses();
-
-      if(!$response)
-      {
-        throw new \Exception("Error Processing Request", 1);
-      }
 
       $this->flags['data'] = [ "status"=> true, "message" => "Your E-mail was sent! Thank you!" ];
 
