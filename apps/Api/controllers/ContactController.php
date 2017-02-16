@@ -30,24 +30,33 @@ class ContactController extends ControllerBase
 
       elseif(!$this->isEmail($this->request->getPost("email","email"))):
         return ApiExceptions::InvalidEmailAddress();
-      //
-      // elseif(!$this->security->checkToken()):
-      //   return ApiExceptions::InvalidCsrfToken();
+
+      elseif(!$this->security->checkToken()):
+        return ApiExceptions::InvalidCsrfToken();
       endif;
 
       $Api = new ApiFunctions;
 
       $Api->sendEmail([
-        "from"    => [ "name" => $this->request->getPost("name","string"), "email" => $this->request->getPost("email","email")],
+        "from"    => [
+          "name" => $this->request->getPost("name","string"),
+          "email" => $this->request->getPost("email","email")
+        ],
         "message" => $this->request->getPost("message","string")
       ]);
 
-      $this->flags['data'] = [ "status"=> true, "message" => "Your E-mail was sent! Thank you!" ];
+      $this->flags['data'] = [
+        "status"=> true,
+        "message" => "Seu contato foi enviado! Em breve te respondemos!"
+      ];
 
     }
     catch (\Exception $e)
     {
-      $this->flags['data'] = [ "status"=> false, "message" => $e->getMessage() ];
+      $this->flags['data'] = [
+        "status"=> false,
+        "message" => $e->getMessage()
+      ];
     }
 
     return $this->response->setJsonContent($this->flags);

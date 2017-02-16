@@ -14,7 +14,18 @@ use Phalcon\Mvc\Dispatcher\Exception as DispatchException,
 use Mustache_Engine as Mustache;
 
 $di = new FactoryDefault();
-$cf = new Ini( __DIR__ . "/../config/config.ini");
+$cf = new Ini( __DIR__ . "/config.ini");
+
+#   Database connection
+$di['db'] = function() use ($cf) {
+  return new DbAdapter([
+    "host"      => $cf->database->host,
+    "username"  => $cf->database->username,
+    "password"  => $cf->database->password,
+    "dbname"    => $cf->database->dbname,
+    "charset"   => $cf->database->charset
+  ]);
+};
 
 #    The URL component is used to generate all kinds of URLs in the application
 $di['url'] = function () {

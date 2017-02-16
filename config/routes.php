@@ -1,23 +1,15 @@
 <?php
-$router->add("/servicos/instalacao", [
+$router->add("/sobre", [
   "namespace"  => "Website\Controllers",
   "module"     => "Website",
-  'controller' => 'services',
-  'action'     => 'installation'
+  'controller' => 'index',
+  'action'     => 'about'
 ]);
-
-$router->add("/servicos/locacao", [
+$router->add("/servicos/{service:[a-zA-Z0-9\_\-\.]+}", [
   "namespace"  => "Website\Controllers",
   "module"     => "Website",
   'controller' => 'services',
-  'action'     => 'rental'
-]);
-
-$router->add("/servicos/menutencao", [
-  "namespace"  => "Website\Controllers",
-  "module"     => "Website",
-  'controller' => 'services',
-  'action'     => 'maintenance'
+  'action'     => 'index'
 ]);
 
 $router->add("/dicas", [
@@ -31,7 +23,7 @@ $router->add("/dica/{slug:[a-zA-Z0-9\_\-\.]+}", [
   "namespace"  => "Website\Controllers",
   "module"     => "Website",
   'controller' => 'tips',
-  'action'     => 'tip'
+  'action'     => 'post'
 ]);
 
 $router->add("/newsletter/subscribe", [

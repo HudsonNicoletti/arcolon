@@ -35,16 +35,5 @@ class Module
       return $view;
     };
 
-    #   Database connection
-    $di['db'] = function() use ($config) {
-      return new DbAdapter([
-        "host"      => $config->database->host,
-        "username"  => $config->database->username,
-        "password"  => $config->database->password,
-        "dbname"    => $config->database->dbname,
-        "charset"   => $config->database->charset
-      ]);
-    };
-
   }
 }

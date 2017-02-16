@@ -40,7 +40,5 @@ class ApiFunctions extends Controller
     {
       throw new \Exception("Error Processing Request", 1);
     }
-
-    return $response;
   }
 }

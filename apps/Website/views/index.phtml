@@ -10,7 +10,7 @@
   <?php echo $this->assets->outputCss(); ?>
   <link rel="shortcut icon" href="/favicon.ico">
 </head>
-<body>
+<body class="<?php echo $bodyclass ?? ""; ?>">
 
 <header class="fixed">
   <div class="container">
@@ -24,13 +24,13 @@
         <span class="bar"></span>
       </div>
       <ul>
-        <li><a data-scroll-nav="1" href="#">Home</a></li>
-        <li><a data-scroll-nav="2" href="#">Sobre</a></li>
-        <li><a data-scroll-nav="3" href="#">Serviços</a></li>
+        <li><a <?php echo $bodyclass ?? 'data-scroll-nav="1"'; ?> href="/">Home</a></li>
+        <li><a <?php echo $bodyclass ?? 'data-scroll-nav="2"'; ?> href="/#about">Sobre</a></li>
+        <li><a <?php echo $bodyclass ?? 'data-scroll-nav="3"'; ?> href="/#services">Serviços</a></li>
         <li><a href="/locacao">Locação</a></li>
-        <li><a data-scroll-nav="5" href="#">Galeria</a></li>
-        <li><a data-scroll-nav="6" href="#">Dicas</a></li>
-        <li><a data-scroll-nav="7" href="#">Contato</a></li>
+        <li><a <?php echo $bodyclass ?? 'data-scroll-nav="5"'; ?> href="/#gallery">Galeria</a></li>
+        <li><a <?php echo $bodyclass ?? 'data-scroll-nav="6"'; ?> href="/#tips">Dicas</a></li>
+        <li><a data-scroll-nav="7" href="/#contact">Contato</a></li>
       </ul>
     </nav>
   </div>
@@ -46,7 +46,7 @@
         <ul>
           <li><i class="fa fa-phone"></i> (43) 3336.5493 </li>
           <li><i class="fa fa-envelope"></i> contato@arcolon.com.br </li>
-          <li><i class="fa fa-map-marker"></i> Av. Lorem ipsum dolor , 158. CEP: 860000-600 , Londrina - PR </li>
+          <li><i class="fa fa-map-marker"></i> Rua, Amor Perfeito, 75 , Interlagos — 86035-270 — Londrina / PR </li>
         </ul>
       </div>
       <div class="column">

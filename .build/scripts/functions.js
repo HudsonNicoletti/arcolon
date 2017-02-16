@@ -136,10 +136,10 @@
       function googlemaps()
       {
         var coords = [
-          { title: "Arcolon" , phone: "(43) 3336.5493" , lat: -23.3178821, lng: -51.1645811 }
+          { title: "Arcolon" , phone: "(43) 3336.5493" , lat: -23.3099895, lng: -51.1372692 }
         ],
             map = new google.maps.Map(document.getElementById('googleMap'),{
-              center: { lat: -23.3178821, lng: -51.1645811 },
+              center: { lat: -23.3099895, lng: -51.1372692 },
               mapTypeId: google.maps.MapTypeId.ROADMAP,
               zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.LARGE,
