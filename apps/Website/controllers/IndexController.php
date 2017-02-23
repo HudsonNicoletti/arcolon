@@ -12,7 +12,7 @@ class IndexController extends ControllerBase
 {
   public function IndexAction()
   {
-    $this->view->tips = Tips::find();
+    $this->view->tips = Tips::find(["order"=>"_ DESC"]);
   }
   public function AboutAction()
   {

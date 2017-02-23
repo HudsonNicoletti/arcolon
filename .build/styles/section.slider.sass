@@ -34,20 +34,39 @@ section.slider
         padding: 0 16px
         margin: 0
 
+        @media( min-width: 960px )
+          text-align: center
+          &.center-right
+            align-items: flex-end
+          &.center-left
+            align-items: flex-start
+          &.top-right
+            justify-content: flex-end
+          &.top-left
+            justify-content: flex-start
+
         h2
           font:
             family: 'Impact'
-            size: 58px
+            size: responsive 48px 68px
+            range: 320px 640px
           color: $white
+          text-align: center
         span
           display: inline-block
           font:
             family: 'Lato'
-            size: 26px
+            size: responsive 28px 38px
+            range: 320px 640px
             weight: 300
           color: $white
           border: 2px solid $white
           padding: 10px 15px
+          background-color:  rgba($white, 0.2)
+          text-align: center
+
+
+
 
 
         a.cta

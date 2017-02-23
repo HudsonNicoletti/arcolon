@@ -121,6 +121,14 @@
         return owl;
       }
 
+      function galleryWrapItems()
+      {
+        var $set = $('#auto-wrap').children();
+        for(var i=0, len = $set.length; i < len; i+=6){
+          $set.slice(i, i+6).wrapAll('<div class="gallery-images"/>');
+        }
+      }
+
         function fixed_header(offset)
         {
           if( offset >= $header.height() )
@@ -186,6 +194,7 @@
 
       if($gallery.length)
       {
+        galleryWrapItems();
         galleryInit();
       }
 
