@@ -2,7 +2,8 @@
 
 namespace Website\Controllers;
 
-use Api\Models\Tips as Tips;
+use Api\Models\Tips as Tips,
+    Api\Models\TipFiles as TipFiles;
 
 use Mustache_Engine as Mustache;
 
@@ -15,7 +16,7 @@ class TipsController extends ControllerBase
 
   public function IndexAction()
   {
-    $this->view->tips = Tips::find(["order"=>"_ DESC"]);
+    $this->view->tips  = Tips::find(["order"=>"_ DESC"]);
 
   }
 
@@ -39,6 +40,7 @@ class TipsController extends ControllerBase
       'h3_end' => "</h3>"
     ]);
 
-    $this->view->tip = $tip;
+    $this->view->tip   = $tip;
+    $this->view->files = TipFiles::findByTip($tip->_) ?? false;
   }
 }

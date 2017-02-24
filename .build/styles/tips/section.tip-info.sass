@@ -95,6 +95,50 @@ section.tip-info
           text-align: justify
         padding: 15px
 
+    .files
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      flex-direction: column
+
+      h4
+        font:
+          family: "Impact"
+          size: 24px
+        color: #42464c
+        margin-bottom: 15px
+
+
+      a.download-btn
+        border: none
+        margin-top: 15px
+        display: inline-block
+        background-color: $red
+        color: $white
+        padding: 10px 10px 10px 60px
+        font:
+          family: 'Lato'
+          size: 20px
+        position: relative
+        text-decoration: none
+        text-transform: uppercase
+
+        &:before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          background-color: rgba($coal,0.9)
+          padding:
+            top: 48px
+            left: 0px
+          transition: all 0.1s linear
+
+        &:hover
+          &:before
+            padding:
+              top: 48px
+              left: 50px
 
     a.font
       display: inline-block

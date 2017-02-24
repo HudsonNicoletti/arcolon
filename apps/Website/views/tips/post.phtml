@@ -12,6 +12,15 @@
       <div class="text"><?php echo $tip->text; ?></div>
     </article>
 
+    <?php if(count($files) > 0): ?>
+    <div class="files">
+      <h4>Arquivos Disponíveis</h4>
+      <?php foreach ($files as $file): ?>
+        <a class="download-btn" href="/assets/public/files/<?php echo $file->file;?>" download="<?php echo $file->title;?>"><?php echo $file->title;?></a>
+      <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
     <a href="<?php echo $tip->font; ?>" class="font">Fonte aqui</a>
     <div class="social">
       <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
