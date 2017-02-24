@@ -17,6 +17,56 @@
       $contact      = $section.filter(".contact"),
       $map          = $contact.find("#googleMap");
 
+      $("form[role='ajax']").submit(function(){
+
+          var $this   = $(this),
+              action  = $this.attr("action"),
+              method  = $this.attr("method"),
+              results = $this.find(".result"),
+              inputs  = $this.find("input:not(:file):not(:submit) , textarea"),
+              files   = $this.find("input:file"),
+              content = new FormData( $this );
+
+              //  Loop & append inputs
+              for( var i = 0;  i < inputs.length ; ++i )
+              {
+                  content.append( $(inputs[i]).attr("name") , $(inputs[i]).val() ); // Add all fields automatic
+              }
+
+              //  Loop & append files with file data
+              if( files.length  ) {
+                  for( var i = 0;  i < files.length ; ++i )
+                  {
+                      if(files[i].files[i] != undefined)
+                      {
+                          content.append(files.eq(i).attr("name"), files[i].files[i], files[i].files[i].name );// add files if exits
+                      }
+                  }
+              }
+
+              //  Submit data
+              $.ajax({
+                  url:  action,           //  Action  ( PHP SCRIPT )
+                  type: method,           //  Method
+                  data: content,          //  Data Created
+                  processData: false,     //  Tell jQuery not to process the data
+                  contentType: false,     //  Tell jQuery not to set contentType
+                  dataType: "json",       //  Accept JSON response
+                  cache: false,           //  Disale Cashing
+                  success: function( response )
+                  {
+                    (response.data.status) ? results.addClass("success") : results.addClass("error");
+                    results.html(response.data.message);
+                    setTimeout(function(){
+                      results.removeClass();
+                      results.html("");
+                    }, 5000)
+                  }
+              });
+
+          return false;
+      });
+
       $menu_toggle.on("click",function(){
         $menu_toggle.toggleClass("active");
         $menu.toggleClass("active");

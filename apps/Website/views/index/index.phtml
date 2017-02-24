@@ -177,9 +177,12 @@
     <span class="subtitle">
       Receba nossas ultimas atualizações de serviços e promoções!
     </span>
-    <form action="/newsletter/subscribe">
+    <form action="/newsletter/subscribe" method="post" accept-charset="utf-8" role="ajax">
+      <?php echo $form->render("security"); ?>
       <input type="email" name="email" placeholder="Digite Seu E-Mail">
       <button type="submit"> Enviar ! </button>
+      <br>
+      <span class="result subtitle"></span>
     </form>
   </div>
 </section>

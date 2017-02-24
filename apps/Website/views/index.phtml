@@ -50,11 +50,15 @@
         </ul>
       </div>
       <div class="column">
-        <form action="/contact/send" method="post" accept-charset="utf-8">
+        <form action="/contact/send" method="post" accept-charset="utf-8" role="ajax">
+          <?php echo $form->render("security"); ?>
+
           <input type="text" name="name" placeholder="Nome Completo">
           <input type="email" name="email" placeholder="E-Mail">
           <textarea name="message" placeholder="Mensagem"></textarea>
           <button type="submit"> Enviar!</button>
+          <br>
+          <span class="result subtitle"></span>
         </form>
       </div>
     </div>

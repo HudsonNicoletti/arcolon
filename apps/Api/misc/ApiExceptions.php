@@ -28,7 +28,7 @@ class ApiExceptions extends \Phalcon\Exception
 
   public static function RegisteredEmailAddress()
   {
-    throw new Exception("E-Mail already in use, please use a different e-mail address.", 1);
+    throw new Exception("Endereço de E-Mail já cadastrado!.", 1);
   }
 
   public static function RegisteredUsername()
