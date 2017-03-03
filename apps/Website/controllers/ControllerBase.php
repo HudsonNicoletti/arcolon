@@ -2,6 +2,9 @@
 
 namespace Website\Controllers;
 
+use Phalcon\Forms\Form,
+    Phalcon\Forms\Element\Hidden;
+
 use Phalcon\Mvc\Controller;
 
 class ControllerBase extends Controller
@@ -17,6 +20,14 @@ class ControllerBase extends Controller
         ->addJs('assets/public/scripts/lightbox.min.js')
         ->addJs('assets/public/scripts/owl.carousel.min.js')
         ->addJs('assets/public/scripts/functions.min.js');
+
+
+      $form = new Form;
+      $form->add(new Hidden( "security" ,[
+        'name'  => $this->security->getTokenKey(),
+        'value' => $this->security->getToken(),
+      ]));
+      $this->view->form = $form;
   }
 
 }
