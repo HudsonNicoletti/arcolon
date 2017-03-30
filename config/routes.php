@@ -39,3 +39,33 @@ $router->add("/contact/send", [
   'controller' => 'contact',
   'action'     => 'send'
 ])->via(["POST"]);
+
+# START - Admin
+
+$router->add("/admin", [
+  "namespace"  => "Admin\Controllers",
+  "module"     => "Admin",
+  'controller' => 'login',
+  'action'     => 'index'
+]);
+
+$router->add("/admin/login/auth", [
+  'module'     => 'Api',
+  'namespace'  => 'Api\Controllers',
+  'controller' => 'auth',
+  'action'     => 'login'
+])->via(["POST"]);
+
+$router->add("/admin/logout", [
+  'module'     => 'Api',
+  'namespace'  => 'Api\Controllers',
+  'controller' => 'auth',
+  'action'     => 'logout',
+]);
+
+$router->add("/admin/index", [
+  "namespace"  => "Admin\Controllers",
+  "module"     => "Admin",
+  'controller' => 'index',
+  'action'     => 'index'
+]);

@@ -8,5 +8,9 @@ $application->registerModules([
   'Website' => [
     'className' => 'Website\Module',
     'path'      => __DIR__ . '/../apps/Website/Module.php'
+  ],
+  'Admin' => [
+    'className' => 'Admin\Module',
+    'path'      => __DIR__ . '/../apps/Admin/Module.php'
   ]
 ]);
