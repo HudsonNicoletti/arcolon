@@ -1,0 +1,37 @@
+<div class="page-container">
+  <div class="main-content">
+    <div class="page-title">
+			<div class="title-env">
+				<h1 class="title">Galleria</h1>
+			</div>
+
+			<div class="breadcrumb-env">
+        <form class="full-width" action="/admin/gallery/upload" method="post" role="form" enctype="multipart/form-data">
+          <?php echo $form->render("security"); ?>
+          <input type="file" name="images[]" multiple="true" class="form-control">
+          <button class="btn btn-success btn-lg full-width" type="submit">Enviar Imagens!</button>
+        </form>
+			</div>
+		</div>
+
+    <div class="row">
+
+      <?php foreach($gallery as $image): ?>
+      <div class="col-md-2 col-sm-6">
+
+          <figure>
+            <img src="/assets/public/images/content/gallery/thumbnails/<?php echo $image->image;?>" class="full-width" height="210">
+          </figure>
+          <a class="full-width">
+            <form action="/admin/gallery/remove/<?php echo $image->_;?>"  method="post" role="form">
+              <?php echo $form->render("security"); ?>
+              <button class="btn btn-danger btn-icon btn-icon-standalone btn-lg full-width" type="submit"><i class="fa-close"></i><span>Remover</span></button>
+            </form>
+          </a>
+
+       </div>
+      <?php endforeach; ?>
+
+    </div>
+  </div>
+</div>

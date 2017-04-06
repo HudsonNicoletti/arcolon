@@ -45,8 +45,8 @@ class ControllerBase extends Controller
          ->addjs("/assets/private/js/xenon-toggles.js")
          ->addjs("/assets/private/js/moment.min.js")
          ->addjs("/assets/private/js/xenon-custom.js")
-         ->addjs("/assets/private/js/custom.js")
-         ->addjs("/assets/private/js/ckeditor/ckeditor.js");
+         ->addjs("/assets/private/js/ckeditor/ckeditor.js")
+         ->addjs("/assets/private/js/custom.js");
 
      $ApiFunctions    = new ApiFunctions;
      $current_session = $ApiFunctions->HandleSession();

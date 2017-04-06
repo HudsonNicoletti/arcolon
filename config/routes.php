@@ -69,3 +69,60 @@ $router->add("/admin/index", [
   'controller' => 'index',
   'action'     => 'index'
 ]);
+
+$router->add("/admin/tips", [
+  "namespace"  => "Admin\Controllers",
+  "module"     => "Admin",
+  'controller' => 'tips',
+  'action'     => 'index'
+]);
+
+$router->add("/admin/tips/new", [
+  "namespace"  => "Admin\Controllers",
+  "module"     => "Admin",
+  'controller' => 'tips',
+  'action'     => 'new'
+]);
+
+$router->add("/admin/tips/create", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'tips',
+  'action'     => 'create'
+])->via(["POST"]);
+
+
+$router->add("/admin/tip/{slug:[a-zA-Z0-9\_\-\.]+}", [
+  "namespace"  => "Admin\Controllers",
+  "module"     => "Admin",
+  'controller' => 'tips',
+  'action'     => 'edit'
+]);
+
+$router->add("/admin/tip/update/{slug:[a-zA-Z0-9\_\-\.]+}", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'tips',
+  'action'     => 'update'
+])->via(["POST"]);
+
+$router->add("/admin/gallery", [
+  "namespace"  => "Admin\Controllers",
+  "module"     => "Admin",
+  'controller' => 'gallery',
+  'action'     => 'index'
+]);
+
+$router->add("/admin/gallery/upload", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'gallery',
+  'action'     => 'upload'
+])->via(["POST"]);
+
+$router->add("/admin/gallery/remove/{image:[0-9]+}", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'gallery',
+  'action'     => 'remove'
+])->via(["POST"]);

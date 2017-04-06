@@ -2,12 +2,12 @@
 
 namespace Api\Misc;
 
-use Phalcon\Mvc\Controller,
-    Mustache_Engine as Mustache;
+use Mustache_Engine as Mustache,
+    abeautifulsite\SimpleImage as SimpleImage;
 
 use Api\Misc\ApiExceptions as ApiException;
 
-class ApiFunctions extends Controller
+class ApiFunctions
 {
   /*
   * @param  string  $input String to verify if it is a valid e-mail address
@@ -26,6 +26,11 @@ class ApiFunctions extends Controller
   {
     $parameters['limit'] = $parameters['limit'] - ($parameters['prefix'] ? strlen($parameters['prefix']) : 0) - ($parameters['suffix'] ? strlen($parameters['suffix']) : 0);
     return $parameters['prefix'].str_shuffle(substr(sha1("".round(time().uniqid())), 0, $parameters['limit'])).$parameters['suffix'];
+  }
+
+  public function slugify(string $text)
+  {
+    return strtolower(preg_replace('~[^\pL\d]+~u', '-', $text));
   }
 
   /*
