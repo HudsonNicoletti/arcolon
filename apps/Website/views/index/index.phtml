@@ -79,72 +79,16 @@
       <h2 class="title">Galeria</h2>
       <div class="gallery-container" id="auto-wrap">
 
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/1.jpg" alt="">
-            <a href="assets/public/images/content/gallery/1.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/2.jpg" alt="">
-            <a href="assets/public/images/content/gallery/2.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/3.jpg" alt="">
-            <a href="assets/public/images/content/gallery/3.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/4.jpg" alt="">
-            <a href="assets/public/images/content/gallery/4.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/5.jpg" alt="">
-            <a href="assets/public/images/content/gallery/5.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/6.jpg" alt="">
-            <a href="assets/public/images/content/gallery/6.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/7.jpg" alt="">
-            <a href="assets/public/images/content/gallery/7.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/8.jpg" alt="">
-            <a href="assets/public/images/content/gallery/8.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/9.jpg" alt="">
-            <a href="assets/public/images/content/gallery/9.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/10.jpg" alt="">
-            <a href="assets/public/images/content/gallery/10.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
-          <figure>
-            <img src="assets/public/images/content/gallery/thumbnails/11.jpg" alt="">
-            <a href="assets/public/images/content/gallery/11.jpg" data-lightbox="gallery">
-              <span><i>+</i> mais info</span>
-            </a>
-          </figure>
+          <?php foreach ($gallery as $image): ?>
+
+            <figure>
+              <img src="assets/public/images/content/gallery/thumbnails/<?php echo $image->image; ?>" alt="">
+              <a href="assets/public/images/content/gallery/<?php echo $image->image; ?>" data-lightbox="gallery">
+                <span><i>+</i> mais info</span>
+              </a>
+            </figure>
+
+          <?php endforeach; ?>
 
       </div>
     </div>
