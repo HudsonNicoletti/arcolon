@@ -86,7 +86,7 @@
 							</li>
 
 							<li>
-								<a id="logmeout" href="#">
+								<a href="/admin/logout">
 									<i class="fa-lock"></i>
 									Logout
 								</a>
@@ -104,53 +104,5 @@
     <?php echo $this->getContent(); ?>
     </body>
     <?php echo $this->assets->outputJs(); ?>
-	<script type="text/javascript">
-        $(function($){
-
-            $("#logmeout").click(function(){
-                $.post("login/logout", function(){
-                    window.location = location;
-                });
-                return false;
-            });
-
-            if( $(".noticeMessage").length  == 1 ){ toastr.info( $(".noticeMessage").find(".msg").text()    , $(".noticeMessage").find(".title").text()  , {"positionClass": "toast-top-full-width"}); }
-            if( $(".errorMessage").length   == 1 ){ toastr.error( $(".errorMessage").find(".msg").text()    , $(".errorMessage").find(".title").text()   , {"positionClass": "toast-top-full-width"}); }
-            if( $(".successMessage").length == 1 ){ toastr.success( $(".successMessage").find(".msg").text(), $(".successMessage").find(".title").text() , {"positionClass": "toast-top-full-width"}); }
-
-
-            function readURL(input, element) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        $(element).attr('src', e.target.result);
-                    }
-                reader.readAsDataURL(input.files[0]);
-                }
-            }
-
-	        $("img.preview_img").hide();
-            $("input[type='file']").change(function() {
-
-                   $("[data-resize]").each(function(){
-                       $(this).removeClass().addClass('col-md-'+$(this).data("resize"));
-                   });
-
-                   $("img.preview_img").show();
-                   readURL(this, "img.preview");
-            });
-
-            $("#search_tbl").filtr({
-                target : "#table",
-                targetChild : "tbody tr"
-            });
-
-            $("#search_wdg").filtr({
-                target : "ul#list-unstyled",
-                targetChild : "li"
-            });
-
-        });
-    </script>
 
 </html>

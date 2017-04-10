@@ -1,0 +1,80 @@
+<div class="page-container">
+  <div class="main-content">
+
+    <form action="/admin/tips/create" method="POST" role="form" enctype="multipart/form-data" accept-charset="UTF-8" class="form-horizontal validate" novalidate="novalidate" >
+      <?php echo $form->render("security"); ?>
+      <div class="page-title">
+        <div class="title-env">
+          <h1 class="title">Cadastre uma Dica</h1>
+          <p class="description">Cadastre uma nova dica para seu domínio.</p>
+        </div>
+
+        <div class="breadcrumb-env">
+          <button class="btn btn-success btn-lg" type="submit" name="submit"> Cadastrar </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12" data-resize="10">
+
+                  <div class="form-group">
+                    <label class="control-label"><strong>Título</strong></label>
+                    <?php echo $form->render('title');?>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label"><strong>Imagem De Destaque</strong></label>
+                    <?php echo $form->render('image');?>
+
+                    <blockquote class="blockquote blockquote-info">
+                      <strong> Atenção ! </strong>
+                      <p> O tamanho ideal para a imagem é de 500x500 para que a imagem não fique destorcida. </p>
+                    </blockquote>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label"><strong>Documentos</strong></label>
+
+                    <div class="duplicates" data-duplicates="tip-doc" >
+
+                      <div class="row" data-duplicate="0">
+                        <div class="col-sm-6">
+                          <?php echo $form->render('doc[]');?>
+                        </div>
+                        <div class="col-sm-6">
+                          <?php echo $form->render('docTitle[]');?>
+                          <button type="button" class="btn btn-danger btn-sm pull-right hidden" data-remove="0"><i class="fa fa-close"></i> Remover</button>
+                        </div>
+                      </div>
+
+                    </div>
+                    <br>
+                    <button class="btn btn-success btn-sm pull-right" type="button" data-duplicater="tip-doc" > Inlcuir Mais Documentos </button>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label"><strong>Descrição</strong></label>
+                    <?php echo $form->render('text');?>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label"><strong>Fonte</strong></label>
+                    <?php echo $form->render('font');?>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+</div>
+</div>

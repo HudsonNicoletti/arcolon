@@ -33,6 +33,27 @@ $router->add("/newsletter/subscribe", [
   'action'     => 'subscribe'
 ])->via(["POST"]);
 
+$router->add("/admin/newsletter/remove/{email_id:[a-zA-Z0-9\_\-\.]+}", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'newsletter',
+  'action'     => 'remove'
+])->via(["POST"]);
+
+$router->add("/admin/newsletter/list", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'newsletter',
+  'action'     => 'list'
+])->via(["POST"]);
+
+$router->add("/admin/newsletter/download", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'newsletter',
+  'action'     => 'download'
+]);
+
 $router->add("/contact/send", [
   "namespace"  => "Api\Controllers",
   "module"     => "Api",
@@ -104,6 +125,20 @@ $router->add("/admin/tip/update/{slug:[a-zA-Z0-9\_\-\.]+}", [
   "module"     => "Api",
   'controller' => 'tips',
   'action'     => 'update'
+])->via(["POST"]);
+
+$router->add("/admin/tip/file/remove/{file:[a-zA-Z0-9\_\-\.]+}", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'tips',
+  'action'     => 'removefile'
+])->via(["POST"]);
+
+$router->add("/admin/tip/remove/{slug:[a-zA-Z0-9\_\-\.]+}", [
+  "namespace"  => "Api\Controllers",
+  "module"     => "Api",
+  'controller' => 'tips',
+  'action'     => 'remove'
 ])->via(["POST"]);
 
 $router->add("/admin/gallery", [

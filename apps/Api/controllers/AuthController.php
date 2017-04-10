@@ -59,7 +59,7 @@ class AuthController extends ControllerBase
         $this->flags['data'] = [
           'status'    =>  true,
           'label'     =>  "success",
-          'message'   =>  "Wellcome, {$name} !",
+          'message'   =>  "Bem Vindo(a), {$name} !",
           'redirect'  =>  (object)["location"=>"/admin","time"=>0]
         ];
 
